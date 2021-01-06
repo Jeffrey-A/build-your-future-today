@@ -4,11 +4,10 @@
 - Incorporated user authentication and drag and drop functionality.  
 - Designed and implemented a RESTful Node.js server that the React front-end communicates with.  
 - Utilized HTML, CSS, JavaScript, React.js, Node.js/Express, PostgreSQL.  
-- Deployed the app to Aws EC2: http://buildyourfuturetoday.me/
 
 **Testing user:** test1, password: 123
 
-### This is not a finish app. These are the TODOs:
+### TODO:
 - Make it fully mobile friendly
 - Add input validation to Login-Register forms and they should be submitted presenting enter and clicking the action button
 - Incorporate email notifications
