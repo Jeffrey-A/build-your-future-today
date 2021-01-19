@@ -11,21 +11,21 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "./front_end/build")));
 
-app.get("/goals", (req, res) => {
-  res.redirect("/");
-});
+// app.get("/goals", (req, res) => {
+//   res.redirect("/");
+// });
 
-app.get("/board", (req, res) => {
-  res.redirect("/");
-});
+// app.get("/board", (req, res) => {
+//   res.redirect("/");
+// });
 
-app.get("/register", (req, res) => {
-  res.redirect("/");
-});
+// app.get("/register", (req, res) => {
+//   res.redirect("/");
+// });
 
-app.get("/login", (req, res) => {
-  res.redirect("/");
-});
+// app.get("/login", (req, res) => {
+//   res.redirect("/");
+// });
 
 // Login - Register
 app.post("/login", (req, res) => {

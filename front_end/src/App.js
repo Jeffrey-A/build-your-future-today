@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import { Link, Redirect } from "react-router-dom";
 
 // Components
@@ -271,7 +271,7 @@ class App extends React.Component {
     );
 
     return (
-      <Router>
+      <HashRouter>
         <Switch>
           <Route exact path="/" component={HomeComponent} />
           <Route exact path="/progress" component={ProgressComponent} />
@@ -283,7 +283,7 @@ class App extends React.Component {
           <Route exact path="/register" component={RegisterComponent} />
           <Route component={NotFound} />
         </Switch>
-      </Router>
+      </HashRouter>
     );
   }
 }
