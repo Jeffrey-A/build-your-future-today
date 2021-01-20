@@ -3,7 +3,7 @@ const dbOperations = require("./database");
 const queryExecutor = dbOperations.queryExecutor;
 const schedule = require("node-schedule");
 const path = require("path");
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
