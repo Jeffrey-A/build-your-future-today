@@ -11,11 +11,11 @@ const buildQueryExecutor = client => query =>
     });
 
 const db = new Client({
-  user: "postgres",
+  user: process.env.DB_USER,
   host: process.env.DB_HOST,
-  database: "postgres",
+  database: process.env.DB_NAME,
   password: process.env.PASSWORD,
-  port: 5432
+  port: process.env.DB_PORT
 });
 
 db.connect();
