@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "build-client": "cd front_end && npm run build",
     "seed": "node seed.js"
   },
   "keywords": [],
