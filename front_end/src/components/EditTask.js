@@ -4,18 +4,18 @@ class EditTask extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ...this.props.taskInfo
+      ...this.props.taskInfo,
     };
   }
-  handleNameChange = e => {
+  handleNameChange = (e) => {
     this.setState({ title: e.target.value });
   };
 
-  handleDescriptionChange = e => {
+  handleDescriptionChange = (e) => {
     this.setState({ description: e.target.value });
   };
 
-  handleStatusChange = e => {
+  handleStatusChange = (e) => {
     this.setState({ status: e.target.value });
   };
 
@@ -27,11 +27,11 @@ class EditTask extends React.Component {
 
     return (
       <div className="overlay">
-        <span className="closeModal" onClick={this.props.cancelEditTask}>
-          X
-        </span>
         <div className="modal">
           <div className="edit-goal-container">
+            <p className="closeModal" onClick={this.props.cancelEditTask}>
+              X
+            </p>
             <div>
               <h2>Edit Task</h2>
             </div>
