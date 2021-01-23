@@ -8,13 +8,13 @@ class CreateTask extends React.Component {
     this.state = {
       name: "",
       description: "",
-      status: STATUS.INCOMPLETE
+      status: STATUS.INCOMPLETE,
     };
   }
 
-  handleName = e => this.setState({ name: e.target.value });
+  handleName = (e) => this.setState({ name: e.target.value });
 
-  handleDescription = e => this.setState({ description: e.target.value });
+  handleDescription = (e) => this.setState({ description: e.target.value });
 
   submit = () => {};
 
@@ -25,10 +25,10 @@ class CreateTask extends React.Component {
 
     return (
       <div className="overlay">
-        <span className="closeModal" onClick={this.props.hide}>
-          X
-        </span>
         <div className="create-task-container modal">
+          <p className="closeModal" onClick={this.props.hide}>
+            X
+          </p>
           <div>
             <h2>Create Task</h2>
           </div>

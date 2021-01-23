@@ -9,15 +9,15 @@ class CreateGoal extends React.Component {
       name: "",
       reason: "",
       description: "",
-      status: STATUS.NO_STARTED
+      status: STATUS.NO_STARTED,
     };
   }
 
-  handleName = e => this.setState({ name: e.target.value });
+  handleName = (e) => this.setState({ name: e.target.value });
 
-  handleReason = e => this.setState({ reason: e.target.value });
+  handleReason = (e) => this.setState({ reason: e.target.value });
 
-  handleDescription = e => this.setState({ description: e.target.value });
+  handleDescription = (e) => this.setState({ description: e.target.value });
 
   submit = () => {};
 
@@ -27,10 +27,10 @@ class CreateGoal extends React.Component {
 
     return (
       <div className="overlay">
-        <span className="closeModal" onClick={this.props.hide}>
-          X
-        </span>
         <div className="create-goal-container modal">
+          <p className="closeModal" onClick={this.props.hide}>
+            X
+          </p>
           <div>
             <h2>Create Goal</h2>
           </div>

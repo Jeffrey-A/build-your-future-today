@@ -4,22 +4,22 @@ class EditGoal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ...this.props.goalInfo
+      ...this.props.goalInfo,
     };
   }
 
-  handleNameChange = e => {
+  handleNameChange = (e) => {
     this.setState({ name: e.target.value });
   };
 
-  handleReasonChange = e => {
+  handleReasonChange = (e) => {
     this.setState({ reason: e.target.value });
   };
 
-  handleDescriptionChange = e => {
+  handleDescriptionChange = (e) => {
     this.setState({ description: e.target.value });
   };
-  handleStatusChange = e => {
+  handleStatusChange = (e) => {
     this.setState({ status: e.target.value });
   };
 
@@ -29,11 +29,11 @@ class EditGoal extends React.Component {
     const updatedBody = { name, description, reason, status };
     return (
       <div className="overlay">
-        <span className="closeModal" onClick={this.props.cancel}>
-          X
-        </span>
         <div className="modal">
           <div className="edit-goal-container">
+            <p className="closeModal" onClick={this.props.cancel}>
+              X
+            </p>
             <div>
               <h2>Edit Goal</h2>
             </div>

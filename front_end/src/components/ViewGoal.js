@@ -13,7 +13,7 @@ class ViewGoal extends React.Component {
       isCreatingTask: false,
       isEditingGoal: false,
       selectedStatus: this.props.status,
-      isViewingTask: false
+      isViewingTask: false,
     };
   }
   componentDidMount() {
@@ -23,12 +23,12 @@ class ViewGoal extends React.Component {
   getTasks = () => {
     const { goalId } = this.props;
     fetch(`/tasks/${goalId}`)
-      .then(res => res.json())
-      .then(data =>
+      .then((res) => res.json())
+      .then((data) =>
         this.setState({
           fetchTasks: data,
           isViewingTask: false,
-          isCreatingTask: false
+          isCreatingTask: false,
         })
       );
   };
@@ -38,13 +38,13 @@ class ViewGoal extends React.Component {
       method: "PUT",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         taskId,
-        newBody
-      })
-    }).then(res => {
+        newBody,
+      }),
+    }).then((res) => {
       if (res.status == 200) {
         // alert("Save!");
         this.getTasks();
@@ -52,23 +52,23 @@ class ViewGoal extends React.Component {
     });
   };
 
-  deleteTask = taskId => {
+  deleteTask = (taskId) => {
     fetch(`/tasks/${taskId}`, {
-      method: "DELETE"
+      method: "DELETE",
     })
-      .then(res => {
+      .then((res) => {
         if (res.status == 200) {
           alert("task deleted");
           this.getTasks();
         }
       })
-      .catch(e => alert("Error"));
+      .catch((e) => alert("Error"));
   };
 
   displayTasks = () => {
     const { fetchTasks } = this.state;
     const container = [];
-    fetchTasks.forEach(task => {
+    fetchTasks.forEach((task) => {
       container.push(
         <TaskCard
           viewTask={this.viewTask}
@@ -88,7 +88,7 @@ class ViewGoal extends React.Component {
     return container;
   };
 
-  getColor = status => {
+  getColor = (status) => {
     switch (status) {
       case "in progress":
         return "blue";
@@ -110,10 +110,10 @@ class ViewGoal extends React.Component {
       method: "POST",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(taskBody)
-    }).then(res => {
+      body: JSON.stringify(taskBody),
+    }).then((res) => {
       if (res.status == 200) {
         // alert("It worked");
         this.getTasks();
@@ -121,7 +121,7 @@ class ViewGoal extends React.Component {
     });
   };
 
-  viewTask = taskInfo => this.setState({ isViewingTask: true, taskInfo });
+  viewTask = (taskInfo) => this.setState({ isViewingTask: true, taskInfo });
 
   cancelTaskView = () => this.setState({ isViewingTask: false });
 
@@ -131,7 +131,7 @@ class ViewGoal extends React.Component {
 
   cancelTaskCreation = () => this.setState({ isCreatingTask: false });
 
-  handleStatusChange = e => {
+  handleStatusChange = (e) => {
     this.setState({ selectedStatus: e.target.value });
   };
 
@@ -143,13 +143,13 @@ class ViewGoal extends React.Component {
       deleteGoal,
       status,
       goalId,
-      editGoal
+      editGoal,
     } = this.props;
     const {
       isCreatingTask,
       isEditingGoal,
       selectedStatus,
-      isViewingTask
+      isViewingTask,
     } = this.state;
 
     if (isViewingTask) {
@@ -187,11 +187,10 @@ class ViewGoal extends React.Component {
 
     return (
       <div className="overlay">
-        <span className="closeModal" onClick={this.props.hide}>
-          X
-        </span>
-
         <div className="view-goal">
+          <p className="closeModal" onClick={this.props.hide}>
+            X
+          </p>
           <div className="view-goal-header">
             <h2>{name}</h2>
             <Badge isSolid color={this.getColor(this.props.status)}>

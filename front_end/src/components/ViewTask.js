@@ -6,7 +6,7 @@ class ViewTask extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isEditingTask: false
+      isEditingTask: false,
     };
   }
 
@@ -14,7 +14,7 @@ class ViewTask extends React.Component {
     this.setState({ isEditingTask: false });
   };
 
-  getColor = status => {
+  getColor = (status) => {
     switch (status) {
       case "complete":
         return "green";
@@ -30,13 +30,12 @@ class ViewTask extends React.Component {
   updateTaskStatus = () => {
     const status = this.props.taskInfo.status;
     const { editTask, taskInfo } = this.props;
-    const {taskId, title, description } = taskInfo;
-    
+    const { taskId, title, description } = taskInfo;
 
-    if( status == 'complete') {
-      editTask(taskId, { status: 'incomplete', title, description })
+    if (status == "complete") {
+      editTask(taskId, { status: "incomplete", title, description });
     } else {
-      editTask(taskId, { status: 'complete',title, description })
+      editTask(taskId, { status: "complete", title, description });
     }
   };
 
@@ -56,10 +55,10 @@ class ViewTask extends React.Component {
 
     return (
       <div className="overlay">
-        <span className="closeModal" onClick={hide}>
-          X
-        </span>
         <div className="view-goal">
+          <p className="closeModal" onClick={hide}>
+            X
+          </p>
           <div className="view-goal-header">
             <h2>{taskInfo.title}</h2>
             <Badge isSolid color={this.getColor(this.props.taskInfo.status)}>
