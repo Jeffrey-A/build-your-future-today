@@ -20,6 +20,7 @@ class Nav extends React.Component {
           <Link to="/">Home</Link>
           <Link to="/goals">Goals</Link>
           <Link to="/board">Board</Link>
+          <Link to="/roadmap">Roadmap</Link>
           <Icon
             icon="user"
             color="white"

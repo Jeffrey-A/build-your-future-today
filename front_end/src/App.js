@@ -16,6 +16,7 @@ import Register from "./components/Register";
 import Nav from "./components/Nav";
 import Activity from "./components/Activity";
 import NoFound from "./components/NoFoundPage";
+import RoadMap from './components/RoadMap';
 
 class App extends React.Component {
   constructor(props) {
@@ -270,6 +271,12 @@ class App extends React.Component {
       />
     );
 
+    const RoadMapComponent = () => (
+      <RoadMap
+        logout={this.handleLogOut}
+      />
+    );
+
     return (
       <HashRouter>
         <Switch>
@@ -280,6 +287,7 @@ class App extends React.Component {
           <Route exact path="/editGoal" component={EditGoalComponent} />
           <Route exact path="/login" component={LoginComponent} />
           <Route exact path="/board" component={BoardComponent} />
+          <Route exact path="/roadmap" component={RoadMapComponent} />
           <Route exact path="/register" component={RegisterComponent} />
           <Route component={NotFound} />
         </Switch>
